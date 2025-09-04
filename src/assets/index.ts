@@ -23,6 +23,10 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import laravel from "./tech/laravel.png";
 import aws from "./tech/aws.png";
+import LOGOSMKN46JAKARTA from "./LOGO SMKN 46 JAKARTA.png";
+import gdg from "./gdg.webp";
+import porto from "./tech/porto.png";
+import adiwiyata from "./tech/adiwiyata.png";
 
 import phplaravel from "./tech/phplaravel.png";
 import serti2 from "./tech/serti2.jpg";
@@ -77,4 +81,8 @@ export {
   phplaravel,
   cloud,
   aws,
+  LOGOSMKN46JAKARTA,
+  gdg,
+  porto,
+  adiwiyata,
 };

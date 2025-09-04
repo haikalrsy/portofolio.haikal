@@ -141,7 +141,7 @@ const Works = () => {
       </motion.p>
 
       <div className="mt-12 sm:mt-20 flex flex-wrap justify-center gap-6 sm:gap-8 px-4">
-        {projects.slice(0, 4).map((project, index) => (
+        {projects.slice(0, 10).map((project, index) => (
           <div key={`project-${index}`} className="flex-shrink-0">
             <ProjectCard {...project} />
           </div>

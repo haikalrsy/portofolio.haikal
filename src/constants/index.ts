@@ -37,6 +37,10 @@ import {
   phplaravel,
   cloud,
   aws,
+LOGOSMKN46JAKARTA,
+gdg,
+adiwiyata,
+porto,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -133,32 +137,73 @@ points: [
 ],
 
   },
+    {
+    title: "Pelatihan bersama Sagasitas AWS Cloud Computing And AI",
+companyName: "AWS",
+icon: aws,
+iconBg: "#E6DEDD",
+date:  "2025 - Present",
+points: [
+  "Mengikuti pelatihan intensif yang difokuskan pada layanan dan infrastruktur AWS Cloud Computing.",
+  "Melakukan praktik langsung dalam membangun, mengelola, dan mengamankan infrastruktur cloud menggunakan AWS.",
+  "Bekerja dalam tim untuk menyelesaikan studi kasus dan proyek berbasis cloud sesuai dengan standar industri.",
+],
+
+  },
+    {
+    title: "Lomba Website Adiwiyata",
+companyName: "SMKN 46",
+icon: LOGOSMKN46JAKARTA,
+iconBg: "#E6DEDD",
+date:  "2025 - Present",
+points: [
+  "Mengikuti lomba pengembangan aplikasi web dengan menggunakan  React dan berbagai framework yang lumayan banyak.",
+"Bekerja sama dengan tim yang terdiri dari desainer, pembimbing, dan rekan satu tim untuk menghasilkan proyek berkualitas.",
+"Menerapkan desain responsif dan memastikan aplikasi dapat berjalan di berbagai jenis browser.",
+"Melakukan presentasi proyek dan menerima masukan dari juri serta peserta lain untuk peningkatan kualitas."
+],
+
+  },
+  {
+  title: "Pelatihan AI bersama Google Developer Groups",
+  companyName: "GDG",
+  icon: gdg,
+  iconBg: "#E6DEDD",
+  date: "2025 - Present",
+  points: [
+    "Mengikuti kelas pembelajaran Artificial Intelligence dengan Python yang difasilitasi oleh Google Developer Groups.",
+    "Mempelajari dasar hingga lanjutan dalam pengolahan data, machine learning, dan implementasi model AI.",
+    "Bekerja sama dengan peserta lain serta mentor untuk menyelesaikan studi kasus berbasis AI.",
+    "Mempresentasikan hasil pembelajaran serta mendapatkan feedback dari mentor dan peserta lain untuk peningkatan keterampilan."
+  ],
+},
+
 ];
 
 const testimonials: TTestimonial[] = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "good partner.",
     name: "Zidane",
     designation: "Student",
     company: "Smkn 46",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "good partner.",
     name: "Filthan",
     designation: "Student",
     company: "Smkn 46",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    image: "",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "good partner.",
     name: "Raffah",
     designation: "Student",
     company: "Smkn 46",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    image: "",
   },
 ];
 
@@ -206,6 +251,28 @@ const projects: TProject[] = [
     ],
     image: AI,
     sourceCodeLink: "https://github.com/haikalrsy/46tecch",
+  },
+   {
+    name: "Portofolio",
+    description: "Merupakan Website portofolio saya",
+    tags: [
+      { name: "HTML", color: "blue-text-gradient" },
+      { name: "CSS", color: "green-text-gradient" },
+      { name: "JS", color: "pink-text-gradient" },
+    ],
+    image: porto,
+    sourceCodeLink: "https://github.com/haikalrsy/portofolio.haikal",
+  },
+  {
+    name: "Lomba Adiwiyata",
+    description: "Merupakan Website Lomba di smkn46",
+    tags: [
+      { name: "Jsx", color: "blue-text-gradient" },
+      { name: "Tsx", color: "green-text-gradient" },
+      { name: "Ren-Py", color: "pink-text-gradient" },
+    ],
+    image: adiwiyata,
+    sourceCodeLink: "https://github.com/haikalrsy/SACG",
   },
 ];
 
