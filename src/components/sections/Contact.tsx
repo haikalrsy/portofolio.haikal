@@ -116,7 +116,7 @@ const Contact = () => {
         </motion.div>
       </div>
       
-      {/* Lanyard component - adjust props as needed */}
+     
       
     </>
   );
