@@ -9,7 +9,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiences } from "../../constants";
 import { SectionWrapper } from "../../hoc";
 import { Header } from "../atoms/Header";
-import { TExperience } from "../../types";
+import { TExperience } from "../..";
 import { config } from "../../constants/config";
 
 const ExperienceCard: React.FC<TExperience> = (experience) => {

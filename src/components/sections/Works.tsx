@@ -4,7 +4,7 @@ import { SectionWrapper } from "../../hoc";
 import { projects, certificates } from "../../constants";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
-import { TProject, TCertificate } from "../../types";
+import { TProject, TCertificate } from "../..";
 
 // ------------------- Animation Variants -------------------
 const fadeInUp = {

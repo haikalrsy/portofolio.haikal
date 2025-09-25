@@ -5,7 +5,7 @@ import type {
   TExperience,
   TTestimonial,
   TProject,
-} from "../types";
+} from "..";
 
 import {
   mobile,
@@ -151,7 +151,7 @@ points: [
 
   },
     {
-    title: "Lomba Website Adiwiyata",
+    title: "Juara 1 Lomba Website Adiwiyata",
 companyName: "SMKN 46",
 icon: LOGOSMKN46JAKARTA,
 iconBg: "#E6DEDD",
