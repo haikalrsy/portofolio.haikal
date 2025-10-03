@@ -36,20 +36,68 @@ const App = () => {
     }
   }, []);
 
-  // Tech logos untuk LogoLoop - sesuai dengan skills
+  // Tech logos dengan warna asli masing-masing
   const techLogos = [
-    { node: <SiHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-    { node: <SiCss3 />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-    { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-    { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-    { node: <SiReact />, title: "React", href: "https://react.dev" },
-    { node: <SiFlutter />, title: "Flutter", href: "https://flutter.dev" },
-    { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-    { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
-    { node: <SiPhp />, title: "PHP", href: "https://www.php.net" },
-    { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com" },
-    { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
-    { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
+    { 
+      node: <span style={{ color: '#E34F26' }}><SiHtml5 size={50} /></span>, 
+      title: "HTML5", 
+      href: "https://developer.mozilla.org/en-US/docs/Web/HTML" 
+    },
+    { 
+      node: <span style={{ color: '#1572B6' }}><SiCss3 size={50} /></span>, 
+      title: "CSS3", 
+      href: "https://developer.mozilla.org/en-US/docs/Web/CSS" 
+    },
+    { 
+      node: <span style={{ color: '#F7DF1E' }}><SiJavascript size={50} /></span>, 
+      title: "JavaScript", 
+      href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
+    },
+    { 
+      node: <span style={{ color: '#3178C6' }}><SiTypescript size={50} /></span>, 
+      title: "TypeScript", 
+      href: "https://www.typescriptlang.org" 
+    },
+    { 
+      node: <span style={{ color: '#61DAFB' }}><SiReact size={50} /></span>, 
+      title: "React", 
+      href: "https://react.dev" 
+    },
+    { 
+      node: <span style={{ color: '#02569B' }}><SiFlutter size={50} /></span>, 
+      title: "Flutter", 
+      href: "https://flutter.dev" 
+    },
+    { 
+      node: <span style={{ color: '#06B6D4' }}><SiTailwindcss size={50} /></span>, 
+      title: "Tailwind CSS", 
+      href: "https://tailwindcss.com" 
+    },
+    { 
+      node: <span style={{ color: '#339933' }}><SiNodedotjs size={50} /></span>, 
+      title: "Node.js", 
+      href: "https://nodejs.org" 
+    },
+    { 
+      node: <span style={{ color: '#777BB4' }}><SiPhp size={50} /></span>, 
+      title: "PHP", 
+      href: "https://www.php.net" 
+    },
+    { 
+      node: <span style={{ color: '#FF2D20' }}><SiLaravel size={50} /></span>, 
+      title: "Laravel", 
+      href: "https://laravel.com" 
+    },
+    { 
+      node: <span style={{ color: '#F05032' }}><SiGit size={50} /></span>, 
+      title: "Git", 
+      href: "https://git-scm.com" 
+    },
+    { 
+      node: <span style={{ color: '#F24E1E' }}><SiFigma size={50} /></span>, 
+      title: "Figma", 
+      href: "https://www.figma.com" 
+    },
   ];
 
   return (
@@ -67,8 +115,8 @@ const App = () => {
         <div className="relative z-0">
           <Contact />
           
-          {/* LogoLoop with proper props */}
-          <div className="h-[00px] relative overflow-hidden my-10">
+          {/* LogoLoop with colored icons */}
+          <div className="h-[100px] relative overflow-hidden my-10">
             <LogoLoop
               logos={techLogos}
               speed={100}

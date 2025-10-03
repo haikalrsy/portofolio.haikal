@@ -32,6 +32,7 @@ export interface LogoLoopProps {
   ariaLabel?: string;
   className?: string;
   style?: React.CSSProperties;
+  color?: string;
 }
 
 const ANIMATION_CONFIG = {
@@ -186,18 +187,19 @@ const useAnimationLoop = (
 export const LogoLoop = React.memo<LogoLoopProps>(
   ({
     logos,
-    speed = 100,
-    direction = 'cante',
+    speed = 120,
+    direction = 'left',
     width = '100%',
-    logoHeight = 30,
+    logoHeight = 28,
     gap = 32,
     pauseOnHover = true,
-    fadeOut =true,
+    fadeOut = false,
     fadeOutColor,
-    scaleOnHover = true,
+    scaleOnHover = false,
     ariaLabel = 'Partner logos',
     className,
     style,
+    color
   }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
@@ -236,9 +238,10 @@ export const LogoLoop = React.memo<LogoLoopProps>(
         ({
           '--logoloop-gap': `${gap}px`,
           '--logoloop-logoHeight': `${logoHeight}px`,
-          ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor })
+          ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor }),
+          ...(color && { color })
         }) as React.CSSProperties,
-      [gap, logoHeight, fadeOutColor]
+      [gap, logoHeight, fadeOutColor, color]
     );
 
     const rootClasses = useMemo(
@@ -246,7 +249,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
         cx(
           'relative overflow-x-hidden group',
           '[--logoloop-gap:32px]',
-          '[--logoloop-logoHeight:30px]',
+          '[--logoloop-logoHeight:28px]',
           '[--logoloop-fadeColorAuto:#ffffff]',
           'dark:[--logoloop-fadeColorAuto:#0b0b0b]',
           scaleOnHover && 'py-[calc(var(--logoloop-logoHeight)*0.1)]',
