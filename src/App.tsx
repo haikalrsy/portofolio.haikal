@@ -68,7 +68,7 @@ const App = () => {
           <Contact />
           
           {/* LogoLoop with proper props */}
-          <div className="h-[300px] relative overflow-hidden my-10">
+          <div className="h-[00px] relative overflow-hidden my-10">
             <LogoLoop
               logos={techLogos}
               speed={100}
@@ -80,7 +80,6 @@ const App = () => {
               fadeOut
               fadeOutColor="#050816"
               ariaLabel="Technology stack"
-              color="white"
             />
           </div>
           

@@ -198,7 +198,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     ariaLabel = 'Partner logos',
     className,
     style,
-    color,
   }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
@@ -287,7 +286,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(
               '[-webkit-user-drag:none] pointer-events-none',
               '[image-rendering:-webkit-optimize-contrast]',
               'motion-reduce:transition-none',
-              color,
               scaleOnHover &&
                 'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
             )}
