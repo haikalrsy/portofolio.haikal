@@ -7,6 +7,7 @@ import { SectionWrapper } from "../../hoc";
 import { fadeIn } from "../../utils/motion";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
+import ElectricBorder from "../ElectricBorder";
 
 interface IServiceCard {
   index: number;
@@ -15,6 +16,13 @@ interface IServiceCard {
 }
 
 const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
+ <ElectricBorder
+  color="#caebedff"
+  speed={1}
+  chaos={0.5}
+  thickness={2}
+  style={{ borderRadius: 16 }}
+>
   <Tilt
     glareEnable
     tiltEnable
@@ -24,10 +32,10 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
   >
     <div className="max-w-[250px] w-full xs:w-[250px]">
       <motion.div
-        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className="green-pink-gradient shadow-card w-full rounded-[20px] p-[1px]"
+        
+        className="bg-transparent shadow-card w-full rounded-[20px] p-[1px] z-0 "
       >
-        <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
+        <div className="bg-transparent flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
           <img
             src={icon}
             alt="web-development"
@@ -41,26 +49,33 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
       </motion.div>
     </div>
   </Tilt>
+  </ElectricBorder>
 );
 
 const About = () => {
   return (
-    <>
-      <Header useMotion={true} {...config.sections.about} />
+    <section className="relative">
+      {/* LightRays Background - Behind content */}
+     
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
-      >
-        {config.sections.about.content}
-      </motion.p>
+      {/* Content - On top of LightRays */}
+      <div className="relative z-10">
+        <Header useMotion={true} {...config.sections.about} />
 
-      <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className="text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
+        >
+          {config.sections.about.content}
+        </motion.p>
+
+        <div className="mt-20 flex flex-wrap gap-10 max-sm:justify-center">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} index={index} {...service} />
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 

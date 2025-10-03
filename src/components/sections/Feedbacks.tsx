@@ -24,7 +24,7 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
     <div className="mt-1">
       <p className="text-[18px] tracking-wider text-white">{testimonial}</p>
 
-      <div className="mt-7 flex items-center justify-between gap-1">
+      <div className="mt-7  flex items-center justify-between gap-1">
         <div className="flex flex-1 flex-col">
           <p className="text-[16px] font-medium text-white">
             <span className="blue-text-gradient">@</span> {name}

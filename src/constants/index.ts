@@ -192,6 +192,30 @@ const testimonials: TTestimonial[] = [
   {
     testimonial:
       "good partner.",
+    name: "Ayas",
+    designation: "Student",
+    company: "Smkn 46",
+    image: "",
+  },
+  {
+    testimonial:
+      "good partner.",
+    name: "Revand",
+    designation: "Student",
+    company: "Smkn 46",
+    image: "",
+  },
+  {
+    testimonial:
+      "good partner.",
+    name: "Farel",
+    designation: "Student",
+    company: "Smkn 46",
+    image: "",
+  },
+  {
+    testimonial:
+      "good partner.",
     name: "Filthan",
     designation: "Student",
     company: "Smkn 46",

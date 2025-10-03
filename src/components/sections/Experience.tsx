@@ -11,11 +11,17 @@ import { SectionWrapper } from "../../hoc";
 import { Header } from "../atoms/Header";
 import { TExperience } from "../..";
 import { config } from "../../constants/config";
-
+ 
 const ExperienceCard: React.FC<TExperience> = (experience) => {
   return (
+    <>
+   
     <VerticalTimelineElement
-      contentStyle={{
+    
+      contentStyle={
+        
+        {
+      
         background: "#ffffff", // Background putih bersih
         color: "#333333", // Text warna gelap untuk kontras
         border: "2px solid #f0f0f0", // Border abu-abu terang
@@ -42,7 +48,9 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         </div>
       }
     >
+
       <div>
+        
         <h3 className="text-[24px] font-bold text-gray-800">
           {experience.title}
         </h3>
@@ -65,6 +73,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         ))}
       </ul>
     </VerticalTimelineElement>
+    </>
   );
 };
 
@@ -72,7 +81,16 @@ const Experience = () => {
   return (
     <>
       <Header useMotion={true} {...config.sections.experience} />
-
+<div>
+        <h1 className="text-left text-4xl font-bold mb-10" data-aos = "zoom-in-out" >
+         My  Experience <br />
+          & Journey
+        </h1>
+        <h4 className="text-left text-md text-gray-500 " style={{ maxWidth: "600px" }}>
+          This Is My Journey So Far, The Path I've Taken, The Lessons I've Learned, <br />
+          And The Growth I've Experienced Along The Way.
+        </h4>
+      </div>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline
           lineColor="#FBF5E5" // Garis timeline putih

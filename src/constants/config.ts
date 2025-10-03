@@ -72,12 +72,12 @@ export const config: TConfig = {
 Selama masa belajar, saya aktif mengikuti berbagai lomba, pelatihan, dan kegiatan pembelajaran untuk memperluas wawasan serta meningkatkan keterampilan di dunia pemrograman. Saya bersemangat untuk terus belajar teknologi baru, membangun solusi yang bermanfaat, dan siap berkolaborasi untuk mewujudkan ide-ide menjadi aplikasi nyata.`,
     },
     experience: {
-      p: "What I  have done so far",
-      h2: "My Experience.",
+      p: "What I have done so far",
+      h2: "My Journey.",
     },
     feedbacks: {
-      p: "What others say",
-      h2: "Testimonials.",
+      p: "What they say",
+      h2: "My Partners.",
     },
     works: {
       p: "My work",
