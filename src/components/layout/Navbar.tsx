@@ -18,7 +18,8 @@ const Navbar = () => {
     };
 
     const navbarHighlighter = () => {
-      const sections = document.querySelectorAll("section[id]");
+      // pastikan tiap element adalah HTMLElement, bukan Element biasa
+      const sections = document.querySelectorAll<HTMLElement>("section[id]");
       sections.forEach((current) => {
         const sectionId = current.getAttribute("id");
         const sectionHeight = current.offsetHeight;
