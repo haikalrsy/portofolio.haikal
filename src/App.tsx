@@ -39,62 +39,62 @@ const App = () => {
   // Tech logos dengan warna asli masing-masing
   const techLogos = [
     { 
-      node: <span style={{ color: '#E34F26' }}><SiHtml5 size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiHtml5 size={50} /></span>, 
       title: "HTML5", 
       href: "https://developer.mozilla.org/en-US/docs/Web/HTML" 
     },
     { 
-      node: <span style={{ color: '#1572B6' }}><SiCss3 size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiCss3 size={50} /></span>, 
       title: "CSS3", 
       href: "https://developer.mozilla.org/en-US/docs/Web/CSS" 
     },
     { 
-      node: <span style={{ color: '#F7DF1E' }}><SiJavascript size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiJavascript size={50} /></span>, 
       title: "JavaScript", 
       href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" 
     },
     { 
-      node: <span style={{ color: '#3178C6' }}><SiTypescript size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiTypescript size={50} /></span>, 
       title: "TypeScript", 
       href: "https://www.typescriptlang.org" 
     },
     { 
-      node: <span style={{ color: '#61DAFB' }}><SiReact size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiReact size={50} /></span>, 
       title: "React", 
       href: "https://react.dev" 
     },
     { 
-      node: <span style={{ color: '#02569B' }}><SiFlutter size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiFlutter size={50} /></span>, 
       title: "Flutter", 
       href: "https://flutter.dev" 
     },
     { 
-      node: <span style={{ color: '#06B6D4' }}><SiTailwindcss size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiTailwindcss size={50} /></span>, 
       title: "Tailwind CSS", 
       href: "https://tailwindcss.com" 
     },
     { 
-      node: <span style={{ color: '#339933' }}><SiNodedotjs size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiNodedotjs size={50} /></span>, 
       title: "Node.js", 
       href: "https://nodejs.org" 
     },
     { 
-      node: <span style={{ color: '#777BB4' }}><SiPhp size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiPhp size={50} /></span>, 
       title: "PHP", 
       href: "https://www.php.net" 
     },
     { 
-      node: <span style={{ color: '#FF2D20' }}><SiLaravel size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiLaravel size={50} /></span>, 
       title: "Laravel", 
       href: "https://laravel.com" 
     },
     { 
-      node: <span style={{ color: '#F05032' }}><SiGit size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiGit size={50} /></span>, 
       title: "Git", 
       href: "https://git-scm.com" 
     },
     { 
-      node: <span style={{ color: '#F24E1E' }}><SiFigma size={50} /></span>, 
+      node: <span style={{ color: '#e4dfdfff' }}><SiFigma size={50} /></span>, 
       title: "Figma", 
       href: "https://www.figma.com" 
     },

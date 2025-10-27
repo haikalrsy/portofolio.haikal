@@ -305,19 +305,19 @@ const certificates = [
     name: "Lomba UTY",
     issuer: "Web Design",
     image: serti1,
-    certificateLink: "https://www.freecodecamp.org/certificate/your-link",
+    certificateLink: "",
   },
   {
     name: "Komdigi Cyber Security",
     issuer: "Komdigi",
     image: serti3,
-    certificateLink: "https://www.aws.training/certificate/your-link",
+    certificateLink: "",
   },
   {
     name: "Lomba SMKN 8",
     issuer: "Web Design",
     image: serti2,
-    certificateLink: "https://www.aws.training/certificate/your-link",
+    certificateLink: "",
   },
 ];
 

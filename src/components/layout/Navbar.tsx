@@ -3,33 +3,24 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../../constants/styles";
 import { navLinks } from "../../constants";
-import { logo, menu, close } from "../../assets";
+import { logo } from "../../assets";
 import { config } from "../../constants/config";
+import BubbleMenu from "../BubbleMenu";
 
 const Navbar = () => {
-  const [active, setActive] = useState<string | null>();
-  const [toggle, setToggle] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-        setActive("");
-      }
+      setScrolled(scrollTop > 100);
     };
-
-    window.addEventListener("scroll", handleScroll);
 
     const navbarHighlighter = () => {
       const sections = document.querySelectorAll("section[id]");
-
       sections.forEach((current) => {
         const sectionId = current.getAttribute("id");
-        // @ts-ignore
         const sectionHeight = current.offsetHeight;
         const sectionTop =
           current.getBoundingClientRect().top - sectionHeight * 0.2;
@@ -40,6 +31,7 @@ const Navbar = () => {
       });
     };
 
+    window.addEventListener("scroll", handleScroll);
     window.addEventListener("scroll", navbarHighlighter);
 
     return () => {
@@ -48,11 +40,20 @@ const Navbar = () => {
     };
   }, []);
 
+  const items = navLinks.map((nav, i) => ({
+    label: nav.title,
+    href: `#${nav.id}`,
+    ariaLabel: nav.title,
+    rotation: i % 2 === 0 ? -8 : 8,
+    hoverStyles: {
+      bgColor: ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"][i % 5],
+      textColor: "#ffffff",
+    },
+  }));
+
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } fixed top-0 z-20 flex w-full items-center py-5 ${
+      className={`${styles.paddingX} fixed top-0 z-20 flex w-full items-center py-5 ${
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
@@ -60,9 +61,7 @@ const Navbar = () => {
         <Link
           to="/"
           className="flex items-center gap-2"
-          onClick={() => {
-            window.scrollTo(0, 0);
-          }}
+          onClick={() => window.scrollTo(0, 0)}
         >
           <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
           <p className="flex cursor-pointer text-[18px] font-bold text-white ">
@@ -70,49 +69,17 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.id ? "text-white" : "text-secondary"
-              } cursor-pointer text-[18px] font-medium hover:text-white`}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex flex-1 items-center justify-end sm:hidden">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="h-[28px] w-[28px] object-contain"
-            onClick={() => setToggle(!toggle)}
-          />
-
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } black-gradient absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl p-6`}
-          >
-            <ul className="flex flex-1 list-none flex-col items-start justify-end gap-4">
-              {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins cursor-pointer text-[16px] font-medium ${
-                    active === nav.id ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <BubbleMenu
+          logo={<span style={{ fontWeight: 700 }}>RB</span>}
+          items={items}
+          menuAriaLabel="Toggle navigation"
+          menuBg="#ffffff"
+          menuContentColor="#111111"
+          useFixedPosition={false}
+          animationEase="back.out(1.5)"
+          animationDuration={0.5}
+          staggerDelay={0.12}
+        />
       </div>
     </nav>
   );
