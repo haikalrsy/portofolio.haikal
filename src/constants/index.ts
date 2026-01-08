@@ -27,6 +27,7 @@ import {
   tuku,
   carrent,
   serti2,
+  serti4,
   threejs,
   laravel,
   serti3,
@@ -41,6 +42,7 @@ LOGOSMKN46JAKARTA,
 gdg,
 adiwiyata,
 porto,
+HealthyCare,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -177,6 +179,21 @@ points: [
     "Mempresentasikan hasil pembelajaran serta mendapatkan feedback dari mentor dan peserta lain untuk peningkatan keterampilan."
   ],
 },
+{
+  "title": "Lomba Web Design Invofest 2025",
+  "companyName": "Harkat Negeri",
+  "icon": web,
+  "iconBg": "#E6DEDD",
+  "date": "2025",
+  "points": [
+    "Mengikuti lomba Web Design Invofest 2025 dengan mengembangkan website bernama Healthy Care.",
+    "Merancang dan mengimplementasikan tampilan website yang responsif, modern, dan user-friendly.",
+    "Mengembangkan fitur informasi nutrisi, penyakit yang sedang marak, serta rekomendasi makanan sehat.",
+    "Bekerja sama dengan tim dan mentor untuk meningkatkan kualitas desain dan fungsionalitas website.",
+    "Mempresentasikan proyek Healthy Care kepada juri dan menerima feedback untuk pengembangan lebih lanjut."
+  ]
+}
+
 
 ];
 
@@ -242,8 +259,8 @@ const projects: TProject[] = [
     ],
     image: carrent,
     sourceCodeLink: "https://github.com/haikalrsy/sekolah-sehat",
+    liveDemoLink: "https://sekolah-sehat.vercel.app",
   },
-  // Project tambahanmu
   {
     name: "Global Vista",
     description: "Website lomba di Smkn 8",
@@ -253,8 +270,9 @@ const projects: TProject[] = [
     ],
     image: globalvista,
     sourceCodeLink: "https://github.com/haikalrsy/lomba",
+    liveDemoLink: "https://lomba-rho.vercel.app",
   },
-   {
+  {
     name: "retrolux",
     description: "Merupakan Website project akhir saya di Smkn 46",
     tags: [
@@ -264,8 +282,9 @@ const projects: TProject[] = [
     ],
     image: retrolux,
     sourceCodeLink: "https://github.com/haikalrsy/retro-lux",
+    liveDemoLink: "https://retro-lux.vercel.app",
   },
-   {
+  {
     name: "46 Tech",
     description: "Merupakan Website Lomba saya di uty",
     tags: [
@@ -275,8 +294,9 @@ const projects: TProject[] = [
     ],
     image: AI,
     sourceCodeLink: "https://github.com/haikalrsy/46tecch",
+    liveDemoLink: "https://46tecch.vercel.app",
   },
-   {
+  {
     name: "Portofolio",
     description: "Merupakan Website portofolio saya",
     tags: [
@@ -285,7 +305,8 @@ const projects: TProject[] = [
       { name: "JS", color: "pink-text-gradient" },
     ],
     image: porto,
-    sourceCodeLink: "https://github.com/haikalrsy/portofolio.haikal",
+    sourceCodeLink: "https://github.com/haikalrsy/portfolio",
+    liveDemoLink: "https://portofolio-haikal-news.vercel.app/",
   },
   {
     name: "Lomba Adiwiyata",
@@ -296,7 +317,20 @@ const projects: TProject[] = [
       { name: "Ren-Py", color: "pink-text-gradient" },
     ],
     image: adiwiyata,
-    sourceCodeLink: "https://github.com/haikalrsy/SACG",
+    sourceCodeLink: "https://github.com/haikalrsy/adiwiyata",
+    liveDemoLink: "https://sacg2.vercel.app/",
+  },
+  {
+    name: "Healthy Care",
+    description:
+      "HealthyCare adalah platform web informasi nutrisi, penyakit, dan rekomendasi makanan sehat.",
+    tags: [
+      { name: "Jsx", color: "blue-text-gradient" },
+      { name: "Tailwind", color: "green-text-gradient" },
+    ],
+    image: HealthyCare,
+    sourceCodeLink: "https://github.com/haikalrsy/healthy-care",
+    liveDemoLink: "https://lomba-invofest-new.vercel.app/",
   },
 ];
 
@@ -319,6 +353,12 @@ const certificates = [
     image: serti2,
     certificateLink: "",
   },
+   {
+    name: "Lomba Invofest",
+    issuer: "Web Design",
+    image: serti4,
+    certificateLink: "",
+  },
 ];
 
 export {
@@ -328,4 +368,4 @@ export {
   testimonials,
   projects,
   certificates,
-};
+}; 

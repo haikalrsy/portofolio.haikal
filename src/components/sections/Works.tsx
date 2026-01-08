@@ -19,6 +19,7 @@ const ProjectCard: React.FC<TProject> = ({
   tags,
   image,
   sourceCodeLink,
+  liveDemoLink,
 }) => (
   <motion.div
     variants={fadeInUp}
@@ -27,13 +28,16 @@ const ProjectCard: React.FC<TProject> = ({
     viewport={{ once: true, amount: 0.2 }}
     className="bg-tertiary w-full max-w-[350px] min-w-[280px] rounded-2xl p-5 border border-white shadow-lg"
   >
-    <div className="relative h-[200px] sm:h-[230px] w-full">
+    {/* IMAGE → LIVE DEMO */}
+    <div
+      className="relative h-[200px] sm:h-[230px] w-full cursor-pointer"
+      onClick={() => window.open(liveDemoLink, "_blank")}
+    >
       <img
         src={image}
         alt={name}
-        className="h-full w-full rounded-2xl object-cover"
+        className="h-full w-full rounded-2xl object-cover hover:opacity-90 transition"
         onError={(e) => {
-          console.log("Project image failed to load:", image);
           const target = e.currentTarget as HTMLImageElement;
           target.style.display = "none";
           const parent = target.parentElement;
@@ -46,10 +50,15 @@ const ProjectCard: React.FC<TProject> = ({
           }
         }}
       />
+
+      {/* GITHUB ICON → SOURCE CODE */}
       <div className="absolute bottom-3 right-3">
         <button
-          onClick={() => window.open(sourceCodeLink, "_blank")}
-          className="bg-black bg-opacity-90 hover:bg-opacity-100 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200 hover:scale-110"
+          onClick={(e) => {
+            e.stopPropagation();
+            window.open(sourceCodeLink, "_blank");
+          }}
+          className="bg-black bg-opacity-90 hover:bg-opacity-100 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:scale-110"
           title="View Source Code"
         >
           <img src={github} alt="github" className="h-5 w-5 object-contain" />
@@ -64,7 +73,10 @@ const ProjectCard: React.FC<TProject> = ({
 
     <div className="mt-4 flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <span key={tag.name} className={`text-xs px-2 py-1 rounded ${tag.color}`}>
+        <span
+          key={tag.name}
+          className={`text-xs px-2 py-1 rounded ${tag.color}`}
+        >
           #{tag.name}
         </span>
       ))}
@@ -91,29 +103,17 @@ const CertificateCard: React.FC<TCertificate> = ({
         src={image}
         alt={name}
         className="h-full w-full rounded-2xl object-cover"
-        onError={(e) => {
-          console.log("Certificate image failed to load:", image);
-          const target = e.currentTarget as HTMLImageElement;
-          target.style.display = "none";
-          const parent = target.parentElement;
-          if (parent) {
-            parent.innerHTML = `
-              <div class="h-full w-full rounded-2xl bg-zinc-800 flex items-center justify-center">
-                <span class="text-white text-sm">Certificate not available</span>
-              </div>
-            `;
-          }
-        }}
       />
-      <div className="absolute bottom-3 right-3">
-        <button
-          onClick={() => window.open(certificateLink, "_blank")}
-          className="bg-black bg-opacity-90 hover:bg-opacity-100 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200 hover:scale-110"
-          title="View Certificate"
-        >
-          <span className="text-white text-xs font-medium">View</span>
-        </button>
-      </div>
+      {certificateLink && (
+        <div className="absolute bottom-3 right-3">
+          <button
+            onClick={() => window.open(certificateLink, "_blank")}
+            className="bg-black bg-opacity-90 hover:bg-opacity-100 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:scale-110"
+          >
+            <span className="text-white text-xs font-medium">View</span>
+          </button>
+        </div>
+      )}
     </div>
 
     <div className="mt-5">
@@ -127,7 +127,6 @@ const CertificateCard: React.FC<TCertificate> = ({
 const Works = () => {
   return (
     <div className="w-full">
-      {/* Project Section */}
       <Header useMotion={false} {...config.sections.works} />
 
       <motion.p
@@ -141,14 +140,11 @@ const Works = () => {
       </motion.p>
 
       <div className="mt-12 sm:mt-20 flex flex-wrap justify-center gap-6 sm:gap-8 px-4">
-        {projects.slice(0, 10).map((project, index) => (
-          <div key={`project-${index}`} className="flex-shrink-0">
-            <ProjectCard {...project} />
-          </div>
+        {projects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} {...project} />
         ))}
       </div>
 
-      {/* Certificate Section */}
       <div className="mt-20">
         <Header useMotion={false} {...config.sections.certificates} />
 
@@ -164,9 +160,10 @@ const Works = () => {
 
         <div className="mt-12 sm:mt-20 flex flex-wrap justify-center gap-6 sm:gap-8 px-4">
           {certificates.map((certificate, index) => (
-            <div key={`certificate-${index}`} className="flex-shrink-0">
-              <CertificateCard {...certificate} />
-            </div>
+            <CertificateCard
+              key={`certificate-${index}`}
+              {...certificate}
+            />
           ))}
         </div>
       </div>

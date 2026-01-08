@@ -27,6 +27,7 @@ import LOGOSMKN46JAKARTA from "./LOGO SMKN 46 JAKARTA.png";
 import gdg from "./gdg.webp";
 import porto from "./tech/porto.png";
 import adiwiyata from "./tech/adiwiyata.png";
+import HealthyCare from "./tech/healthycare.jpeg";
 
 import phplaravel from "./tech/phplaravel.png";
 import serti2 from "./tech/serti2.jpg";
@@ -42,6 +43,7 @@ import tesla from "./company/tesla.png";
 import tuku from "./company/tuku.png";
 import cyber from "./company/cyber.png";
 import carrent from "./carrent.png";
+import serti4 from "./tech/serti4.jpeg";
 
 export {
   logo,
@@ -85,4 +87,6 @@ export {
   gdg,
   porto,
   adiwiyata,
+  serti4,
+  HealthyCare,
 };
