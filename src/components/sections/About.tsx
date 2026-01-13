@@ -17,26 +17,38 @@ interface IServiceCard {
 }
 
 const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
-  <StarBorder as="button" className="custom-class" color="white" speed="5s">
-    <Tilt
-      glareEnable
-      tiltEnable
-      tiltMaxAngleX={30}
-      tiltMaxAngleY={30}
-      glareColor="#aaa6c3"
-    >
-      <div className="max-w-[250px] w-full xs:w-[250px]">
-        <motion.div className="bg-transparent shadow-card w-full rounded-[20px] p-[1px] z-0">
-          <div className="bg-transparent flex h-[280px] flex-col items-center justify-evenly rounded-[20px] px-10 py-12 gap-x-8">
-            <img src={icon} alt={title} className="h-16 w-16 object-contain" />
-            <h3 className="text-center text-[20px] font-bold text-white">
-              {title}
-            </h3>
-          </div>
-        </motion.div>
-      </div>
-    </Tilt>
-  </StarBorder>
+  <Tilt
+    glareEnable
+    tiltEnable
+    tiltMaxAngleX={30}
+    tiltMaxAngleY={30}
+    glareColor="#aaa6c3"
+  >
+    <div className="max-w-[250px] w-full xs:w-[250px]">
+      <motion.div 
+        variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+        className="w-full rounded-[40px] overflow-hidden"
+      >
+        <div 
+          className="flex h-[280px] flex-col items-center justify-evenly px-10 py-12 gap-x-8 border border-white/[0.125] rounded-[12px] hover:bg-[rgba(17,25,40,0.6)] transition-all duration-300"
+          style={{
+            backgroundColor: 'rgba(17, 25, 40, 0.5)',
+            backdropFilter: 'blur(0px) saturate(92%)',
+            WebkitBackdropFilter: 'blur(0px) saturate(92%)',
+          }}
+        >
+          <img 
+            src={icon} 
+            alt={title} 
+            className="h-16 w-16 object-contain" 
+          />
+          <h3 className="text-center text-[20px] font-bold text-white">
+            {title}
+          </h3>
+        </div>
+      </motion.div>
+    </div>
+  </Tilt>
 );
 
 const About = () => {
@@ -47,7 +59,7 @@ const About = () => {
   };
 
   return (
-    <section className="relative">
+    <section className="relative ">
       <div className="relative z-10">
         <Header useMotion={true} {...config.sections.about} />
 
@@ -60,7 +72,6 @@ const About = () => {
 
         {/* Services Grid */}
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 md:gap-x-14 xl:gap-x-20 gap-y-10 md:gap-y-14 xl:gap-y-16 justify-items-center">
-
           {services.map((service, index) => (
             <ServiceCard key={service.title} index={index} {...service} />
           ))}

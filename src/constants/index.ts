@@ -173,7 +173,7 @@ points: [
   iconBg: "#E6DEDD",
   date: "2025 - Present",
   points: [
-    "Mengikuti kelas pembelajaran Artificial Intelligence dengan Python yang difasilitasi oleh Google Developer Groups.",
+    "Mengikuti kelas pembelajaran Artificial Intelligence dengan Python yang difasilitas  i oleh Google Developer Groups.",
     "Mempelajari dasar hingga lanjutan dalam pengolahan data, machine learning, dan implementasi model AI.",
     "Bekerja sama dengan peserta lain serta mentor untuk menyelesaikan studi kasus berbasis AI.",
     "Mempresentasikan hasil pembelajaran serta mendapatkan feedback dari mentor dan peserta lain untuk peningkatan keterampilan."
